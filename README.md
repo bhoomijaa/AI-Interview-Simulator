@@ -1,96 +1,92 @@
-# AI-Interview-Simulator
-An intelligent, voice-based mock interview platform that simulates real interview experiences and provides structured feedback using AI.
+# AI-Powered Interview Simulation and Evaluation System
 
- **Overview**
+## Overview
 
-Interviews are stressful, inconsistent, and often lack useful feedback. This project was built to solve exactly that.
+The traditional interview process is often inconsistent, time-consuming, and provides little to no feedback to candidates. This project aims to address these issues by building an AI-based interview system that can simulate real interview scenarios and evaluate candidate responses.
 
-The system acts as an AI interviewer that:
+The system acts as an automated interviewer that generates personalised questions based on a candidate’s resume and evaluates their answers using predefined criteria. It provides structured feedback and an overall score to help candidates improve their performance.
 
-Generates personalised questions based on your resume
-Conducts the interview via voice interaction
-Evaluates your answers across multiple criteria
-Provides detailed feedback and an overall score
+## Features
 
-The goal is simple: help candidates practise better and reduce bias in evaluation
+- Personalised interview questions generated from the candidate’s resume and job role  
+- Voice-based interaction using text-to-speech and speech recognition  
+- Real-time answer evaluation using multiple criteria  
+- Feedback provided for each response  
+- Final score calculated based on overall performance  
+- Interview results stored in JSON format for future reference  
 
-✨ Key Features
-**Personalised Questions**
-Questions are dynamically generated based on your resume and job role — no fixed templates.
-**Voice-Based Interaction**
-The AI asks questions using text-to-speech, and you respond using your microphone.
-**AI Evaluation System**
-Each answer is scored on:
-Relevance
-Completeness
-Structure
-Specificity
-Impact
-Professionalism
-**Real-Time Processing**
-Question generation and answer evaluation run simultaneously to reduce waiting time.
-**Noise Reduction + Speech Recognition**
-Audio is cleaned before transcription to improve accuracy.
-**Detailed Feedback + Final Score**
-You get per-question feedback along with an overall performance score.
+## Evaluation Criteria
 
-**System Architecture**
+Each answer is evaluated on the following parameters:
+- Relevance  
+- Completeness  
+- Structure  
+- Specificity  
+- Impact  
+- Professionalism  
 
-The system follows a layered approach:
+## Tech Stack
 
-Frontend (Streamlit) – interactive UI
-State Management (FSM) – controls interview flow
-AI Layer (LLM) – generates and evaluates content
-Speech Layer – handles audio input/output
-Data Layer – stores results in JSON
-🛠️ Tech Stack
+**Programming Language:**  
+Python  
 
-Core:
+**Frontend:**  
+Streamlit  
 
-Python
-Streamlit
+**AI and NLP:**  
+Mistral LLM (via LiteLLM)  
+Zero-shot and Chain-of-Thought prompting  
 
-AI / NLP:
+**Speech Processing:**  
+Speechmatics (Speech-to-Text)  
+Edge TTS (Text-to-Speech)  
+noisereduce (noise reduction)  
 
-Mistral LLM (via LiteLLM)
-Chain-of-Thought Prompting
-Zero-shot prompting
+**Concurrency and Performance:**  
+asyncio  
+ThreadPoolExecutor  
+LRU Cache  
 
-Speech Processing:
+**Other Libraries:**  
+PyPDF2 / pypdf  
+numpy  
+scipy  
+pygame  
 
-Speechmatics (ASR)
-Edge TTS (Text-to-Speech)
-noisereduce (audio cleaning)
+## How It Works
 
-Performance:
+1. The user uploads a resume in PDF format  
+2. The system extracts key information from the resume  
+3. Interview questions are generated based on the resume and job description  
+4. The system asks questions using text-to-speech  
+5. The user responds using a microphone  
+6. Audio is processed and converted to text  
+7. The response is evaluated using AI  
+8. The process repeats for multiple questions  
+9. Final feedback and score are generated and stored
 
-asyncio (concurrency)
-ThreadPoolExecutor
-LRU Cache
-**How It Works**
-Upload your resume (PDF)
-System extracts key information
-AI generates personalised questions
-Questions are spoken aloud
-You answer via microphone
-Audio is processed and transcribed
-AI evaluates your response
-Process repeats for multiple questions
-Final score + feedback is generated and saved
-**Output**
-Structured interview results stored as JSON
-Includes:
-Questions & answers
-Scores
-Feedback
-Final evaluation
-**Future Improvements**
-Cloud deployment (multi-user support)
-Video + facial expression analysis
-Multilingual interviews
-Employer dashboard for candidate comparison
-**Impact**
-Helps candidates practise anytime
-Provides structured, unbiased feedback
-Reduces dependency on human interviewers
-Makes interview prep more accessible
+AI-Interview-System/
+│
+├── app.py
+├── main.py
+├── utils/
+├── requirements.txt
+├── README.md
+├── schema.json
+├── .env.example
+└── PROJECT_SYNOPSIS.md
+
+
+## Future Improvements
+
+- Cloud deployment for multi-user access  
+- Multilingual interview support  
+- Video-based interview analysis  
+- Employer dashboard for candidate comparison  
+
+
+## Note
+
+This project is developed as part of an academic submission. It is a local prototype and may be extended further with additional features in the future.
+
+## Project Structure
