@@ -1,92 +1,103 @@
-# AI-Powered Interview Simulation and Evaluation System
+#  AI Interview System
 
-## Overview
+An intelligent interview platform that conducts automated job interviews using AI. The system analyzes candidate resumes, asks relevant questions, and provides detailed feedback and scoring.
 
-The traditional interview process is often inconsistent, time-consuming, and provides little to no feedback to candidates. This project aims to address these issues by building an AI-based interview system that can simulate real interview scenarios and evaluate candidate responses.
+##  Features
 
-The system acts as an automated interviewer that generates personalised questions based on a candidate’s resume and evaluates their answers using predefined criteria. It provides structured feedback and an overall score to help candidates improve their performance.
+- **Resume Analysis**: Upload your PDF resume and get key highlights extracted automatically
+- **Personalized Questions**: AI generates interview questions based on your resume and the job description
+- **Voice Interaction**: Speak your answers naturally - the system will transcribe and analyze them
+- **Real-time Chat**: Chat interface showing the conversation flow
+- **Intelligent Scoring**: Get detailed feedback and scores for each answer
+- **Complete Evaluation**: Receive an overall interview score and comprehensive report
 
-## Features
+##  How It Works
 
-- Personalised interview questions generated from the candidate’s resume and job role  
-- Voice-based interaction using text-to-speech and speech recognition  
-- Real-time answer evaluation using multiple criteria  
-- Feedback provided for each response  
-- Final score calculated based on overall performance  
-- Interview results stored in JSON format for future reference  
+### 1. Setup
+- Upload your resume (PDF format)
+- Paste the job description you're applying for
+- Select Maximum number of Questions (Optional)
+- Select AI Interviewer Voice (Optional)
+- Click "Submit" to process your information
 
-## Evaluation Criteria
+### 2. Interview Process
+- Click "Start Interview" to begin
+- The AI will greet you and ask the first question
+- Listen to each question (text-to-speech enabled)
+- Record your answer using the audio recorder **(Make sure to use Chrome Browser Only)**
+- The system transcribes and analyzes your response
+- Receive the next question based on your previous answers
 
-Each answer is evaluated on the following parameters:
-- Relevance  
-- Completeness  
-- Structure  
-- Specificity  
-- Impact  
-- Professionalism  
+### 3. Get Results
+- Complete selected number interview questions
+- Receive detailed feedback for each answer
+- Get an overall interview score out of 10
+- Review the complete chat history and evaluation report
 
-## Tech Stack
+##  What Makes It Special
 
-**Programming Language:**  
-Python  
+- **Adaptive Questioning**: Each question builds on your previous answers
+- **Natural Conversation**: Feels like talking to a real interviewer
+- **Detailed Feedback**: Understand what you did well and areas for improvement
+- **Professional Interface**: Clean, easy-to-use chat-based design
+- **Complete Documentation**: Full interview transcript and scoring breakdown
 
-**Frontend:**  
-Streamlit  
+##  Requirements
+- Internet connection for AI processing
+- Microphone access for recording answers
+- PDF resume file
+- Job description text
+- LLM API key for AI processing
+    - Supported Models (LiteLLM): https://docs.litellm.ai/docs/providers (Change LLM_MODEL in .env)
+    - Free Experimental Model from MistralAI: https://mistral.ai/
+    - Note: If you're using a different model provider such as OpenAI, be sure to update the environment variable from MISTRAL_API_KEY to OPENAI_API_KEY as per the LiteLLM guidelines.
+- Speechmatics API key for speech-to-text
+    - Speechmatics Platform: https://www.speechmatics.com/
 
-**AI and NLP:**  
-Mistral LLM (via LiteLLM)  
-Zero-shot and Chain-of-Thought prompting  
+##  Interface
 
-**Speech Processing:**  
-Speechmatics (Speech-to-Text)  
-Edge TTS (Text-to-Speech)  
-noisereduce (noise reduction)  
+The system features a modern chat interface similar to ChatGPT:
+- **AI Interviewer** messages appear on the left (questions and instructions)
+- **Your responses** appear on the right (transcribed from audio)
+- **Progress tracker** shows which question you're on
+- **Audio recorder** for easy voice input
 
-**Concurrency and Performance:**  
-asyncio  
-ThreadPoolExecutor  
-LRU Cache  
+##  Scoring System
 
-**Other Libraries:**  
-PyPDF2 / pypdf  
-numpy  
-scipy  
-pygame  
+Each answer receives:
+- Individual score (0-10)
+- Detailed written feedback
+- Suggestions for improvement
 
-## How It Works
+Final results include:
+- Overall interview score
+- Question-by-question breakdown
+- Complete conversation history
+- Personalized recommendations
 
-1. The user uploads a resume in PDF format  
-2. The system extracts key information from the resume  
-3. Interview questions are generated based on the resume and job description  
-4. The system asks questions using text-to-speech  
-5. The user responds using a microphone  
-6. Audio is processed and converted to text  
-7. The response is evaluated using AI  
-8. The process repeats for multiple questions  
-9. Final feedback and score are generated and stored
-
-AI-Interview-System/
-│
-├── app.py
-├── main.py
-├── utils/
-├── requirements.txt
-├── README.md
-├── schema.json
-├── .env.example
-└── PROJECT_SYNOPSIS.md
-
-
-## Future Improvements
-
-- Cloud deployment for multi-user access  
-- Multilingual interview support  
-- Video-based interview analysis  
-- Employer dashboard for candidate comparison  
+##  How to run in local environment.
+1.  Clone the repository
+2. Create a virtual environment
+3. Install dependencies inside the virtual environment.
+4. Add environment variables (.env.example) like API keys
+5. Run the application.
 
 
-## Note
+##  Multiple Interviews
 
-This project is developed as part of an academic submission. It is a local prototype and may be extended further with additional features in the future.
+- Take multiple practice interviews
+- Try different job descriptions
+- Track your improvement over time
+- Perfect your interview skills
 
-## Project Structure
+##  Tips for Best Results
+
+- Speak clearly when recording answers
+- Provide detailed, specific responses
+- Take your time - there's no rush
+- Treat it like a real interview
+- Review feedback to improve
+
+---
+
+*Ready to ace your next interview? Upload your resume and get started!*
